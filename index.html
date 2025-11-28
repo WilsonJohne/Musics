@@ -1,50 +1,112 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Music Portfolio - Wilson Johne</title>
+    <!-- Retro font + UI font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilo/style.css">
+    <!-- Favicons: place files at project root (favicon.ico, favicon-32x32.png, favicon-16x16.png, apple-touch-icon.png) -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- versioned fallback to bust cache if needed -->
+    <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon">
 </head>
 <body>
     <header>
-        <h1>Wilson Johne</h1>
-        <p>Portfólio musical</p>
-        <nav class="header-links">
-            <a href="https://open.spotify.com/artist/6yJEiC2s6MMMwHiQJDdYCV?si=p_Oz4ipqQyeQ1VnA2DICyw" target="_blank">Spotify</a>
-            <a href="#sobre-mim">Sobre mim</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h1>Musicas</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dolorum, deleniti omnis, laudantium nulla officia fugiat ducimus harum dicta cupiditate perferendis quidem debitis libero at iure laborum placeat delectus necessitatibus.</p>
-            <div id="musica">
-                <div class="music-card">
-                    <iframe data-testid="embed-iframe" src="https://open.spotify.com/embed/track/6VtfmupbbY5kunNCLHoeNh?utm_source=generator" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-                <div class="music-card">
-                    <iframe data-testid="embed-iframe" src="https://open.spotify.com/embed/track/6MeOuIFQiqXcH3CGWWiaYs?utm_source=generator" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-                <div class="music-card">
-                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/2noK49egqwp6hgSBose1lf?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-                <div class="music-card">
-                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/7dAVZaYtwfLzLupNZgNTwJ?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-                <div class="music-card">
-                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/6j8qr8HZ3gTurOD7nMcmk6?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="header-inner container">
+            <div class="brand">
+                <div class="logo h-retro">W</div>
+                <div class="title">
+                    <div class="name">Wilson Johne</div>
+                    <div class="tag">Music & Production</div>
                 </div>
             </div>
-            <h1 id="sobre-mim">Sobre mim</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, numquam. Atque iusto laudantium eveniet illum maiores rerum! Voluptatum iste culpa, labore voluptates eveniet adipisci cum delectus iusto, aliquid maiores a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus sunt eveniet aspernatur minus, libero impedit ut ab fuga officia beatae! Tempore ducimus eveniet eius ratione provident consequuntur sunt sequi expedita!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odio asperiores quis exercitationem quidem doloribus explicabo quaerat, aperiam repudiandae accusamus fugit expedita ullam ipsum ut facilis. Debitis maxime architecto tempora.</p>
 
-            <h1 id="contato">Contato</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste maiores quod facere provident debitis voluptate ad, est aliquam pariatur vero, libero sapiente corporis quisquam sint laborum blanditiis, mollitia soluta ab?</p>
-            <p>Teste@gmail.com</p>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#musicas">Music</a>
+                <a href="#contato" class="btn-primary">Contact</a>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+        </div>
+    </header>
+
+    <main class="container" id="home">
+        <section class="hero">
+            <div class="hero-card">
+                <h1 class="h-retro">Music Portfolio</h1>
+                <p>Welcome to my portfolio. Here you will find my tracks, remixes and sonic projects. Click tracks to open each song in a new tab.</p>
+
+                <div style="margin-top:12px; display:flex; gap:8px;">
+                    <a class="btn-primary" href="#musicas">View music</a>
+                    <a href="#contato" style="padding:8px 12px; border-radius:10px; background:transparent; text-decoration:none; color:var(--accent-dark); border:1px solid rgba(0,0,0,0.06)">About</a>
+                </div>
+            </div>
+
+            <aside>
+                <div class="hero-card">
+                    <h3 class="h-retro" style="font-size:0.8rem">Featured</h3>
+                    <p style="margin-top:8px;color:#444">Latest track</p>
+                    <div style="margin-top:12px;">
+                        <!-- Mini player embed (example). Replace src if desired -->
+                        <div style="position:relative; border-radius:10px; overflow:hidden;">
+                            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5vgzy0BCeTEIkWkqdwZt2T?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            
+                        </div>
+                    </div>
+                </div>
+            </aside>
         </section>
+
+        <section id="about" class="section">
+            <h2 class="h-retro">About</h2>
+            <p>I am a producer and composer. This space gathers my productions and releases. The experience is clean, fluid and designed to highlight audio and a retro aesthetic.</p>
+        </section>
+
+        <section id="musicas" class="section">
+            <h2 class="h-retro">Music</h2>
+            <p>Scroll or open in a new tab. Cards are dynamically generated.</p>
+
+            <div id="musicGrid" class="music-grid">
+                <!-- Cards will be inserted by JS -->
+            </div>
+        </section>
+
+        <section id="contato" class="section">
+            <h2 class="h-retro">Contact</h2>
+            <div class="contact-grid">
+                <form style="flex:1; min-width:220px;" onsubmit="event.preventDefault(); alert('Replace this form with your backend')">
+                    <input class="input" placeholder="Your name" required />
+                    <input class="input" type="email" placeholder="you@example.com" required style="margin-top:8px"/>
+                    <textarea class="input" rows="4" placeholder="Message" style="margin-top:8px"></textarea>
+                    <div style="margin-top:8px;">
+                        <button class="btn-primary" type="submit">Send</button>
+                    </div>
+                </form>
+
+                <div style="width:320px; min-width:220px;">
+                    <h4>Links</h4>
+                    <p style="color:#555">Links to your platforms (replace below).</p>
+                    <ul>
+                        <li><a href="#" target="_blank">YouTube</a></li>
+                        <li><a href="#" target="_blank">Spotify</a></li>
+                        <li><a href="#" target="_blank">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            © <span id="year"></span> Wilson Johne — Music Production
+        </footer>
     </main>
+
+    <script src="js/script.js" defer></script>
 </body>
 </html>
