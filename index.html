@@ -157,13 +157,30 @@
 
         <div class="contact-grid">
 
-            <form style="flex:1; min-width:220px;" action="obrigado.html" method="GET">
-                <input class="input" name="name" placeholder="Your name" required />
-                <input class="input" name="email" type="email" placeholder="you@example.com" required style="margin-top:8px"/>
-                <textarea class="input" name="message" rows="4" placeholder="Message" style="margin-top:8px"></textarea>
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="obrigado.html" style="flex:1; min-width:220px;">
+                <!-- Netlify required hidden input -->
+                <input type="hidden" name="form-name" value="contact" />
+
+                <!-- Honeypot (invisible to humans) -->
+                <input type="hidden" name="bot-field" />
+
+                <!-- Visible fields -->
+                <label class="sr-only" for="name">Name</label>
+                <input id="name" class="input" name="name" placeholder="Your name"              required />
+
+                <label class="sr-only" for="email">Email</label>
+                <input id="email" class="input" type="email" name="email" placeholder="your@email.com — for replies" required style="margin-top:8px"/>
+
+                <label class="sr-only" for="message">Message</label>
+                <textarea id="message" class="input" name="message" rows="4" placeholder="Tell me about your project or collaboration idea" style="margin-top:8px"></textarea>
+
+                 <!-- Optional: customize subject and reply-to so the alert email looks             nicer -->
+                <input type="hidden" name="_subject" value="New contact from your website" />
+                <input type="hidden" name="_replyto" value="" />
+
                 <div style="margin-top:8px;">
-                    <button class="btn-primary" type="submit">Send</button>
-                </div>
+                    <button class="btn-primary" type="submit">Send message</button>
+                 </div>
             </form>
 
             <div style="width:320px; min-width:220px;">
